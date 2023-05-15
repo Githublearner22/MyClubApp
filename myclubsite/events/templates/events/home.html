@@ -1,0 +1,12 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<center>
+    {% if user.is_authenticated %}
+    <h1>
+    Hello {{user}} </h1>
+    </center>
+    {% else %}
+    {% endif %}
+
+{% endblock %}
