@@ -1,7 +1,8 @@
 from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
+#import django_heroku
+#import dj_database_url
+#import sys #maybe works>
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,7 +17,7 @@ SECRET_KEY = 'django-insecure-+v#&igdxq2_1hc2dyez^#17ty@j=63vhtq0rc%t9k7m_io6#lf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False #heroku change
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com'] #heroku change
+ALLOWED_HOSTS = ['*'] #heroku change
 
 
 # Application definition
@@ -119,9 +120,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Heroku stugg
 
-WHITENOISE_USE_FINDERS = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#WHITENOISE_USE_FINDERS = True
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #Heroku stuff online fixing buggs #
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles'), ]
 #Heroku stuff#
+
+#django_heroku.settings(locals())
+#sys.executable #newthing
